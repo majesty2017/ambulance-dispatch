@@ -1,0 +1,80 @@
+{
+  "menu": [
+    {
+      "name": "Dashboards",
+      "badge": "",
+      "badgeClass": "badge badge-light-warning badge-pill ml-auto mr-1",
+      "icon": "home",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "dashboard/analytics",
+          "name": "Analytics",
+          "icon": "circle",
+          "slug": "dashboard-analytics"
+        }
+      ]
+    },
+
+    {
+      "navheader": "Apps & Configs",
+      "slug": ""
+    },
+    {
+      "name": "User",
+      "icon": "user",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "user/users/list",
+          "name": "Users",
+          "icon": "users",
+          "slug": "user-list"
+        },
+        {
+          "url": "driver/info",
+          "name": "driver_info",
+          "icon": "user",
+          "slug": "driver-list"
+        }
+      ]
+    },
+    {
+      "url": "e/requests",
+      "name": "ambulance_request",
+      "icon": "save",
+      "slug": "app-file-manager"
+    },
+    {
+      "url": "routes",
+      "name": "routes",
+      "icon": "hospital",
+      "slug": "routes"
+    },
+    {
+      "url": "ambulance",
+      "name": "ambulance",
+      "icon": "truck",
+      "slug": "ambulance"
+    },
+    {
+      "url": "driver_status",
+      "name": "driver_status",
+      "icon": "list",
+      "slug": "driver_status"
+    },
+    {
+      "url": "dispatch_status",
+      "name": "dispatch_status",
+      "icon": "list",
+      "slug": "dispatch_status"
+    },
+    {
+      "name": "Settings",
+      "icon": "settings",
+      "slug": "",
+      "submenu": [
+      ]
+    }
+  ]
+}

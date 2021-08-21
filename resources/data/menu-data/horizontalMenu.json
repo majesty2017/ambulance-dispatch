@@ -1,0 +1,74 @@
+{
+  "menu": [
+    {
+      "name": "dashboard",
+      "badge": "",
+      "badgeClass": "badge badge-light-warning badge-pill ml-auto mr-1",
+      "icon": "home",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "dashboard/analytics",
+          "name": "Analytics",
+          "icon": "circle",
+          "slug": "dashboard-analytics"
+        }
+      ]
+    },
+
+    {
+      "navheader": "app_config",
+      "slug": ""
+    },
+    {
+      "url": "user/users/list",
+      "name": "users",
+      "icon": "users",
+      "slug": "user-list"
+    },
+    {
+      "url": "driver",
+      "name": "driver_info",
+      "icon": "user",
+      "slug": "driver-index"
+    },
+    {
+      "url": "requests",
+      "name": "ambulance_request",
+      "icon": "save",
+      "slug": "request-list"
+    },
+    {
+      "url": "app/calendar",
+      "name": "Calendar",
+      "icon": "calendar",
+      "slug": "app-calendar"
+    },
+    {
+      "url": "app/kanban",
+      "name": "Kanban",
+      "icon": "grid",
+      "slug": "app-kanban"
+    },
+    {
+      "url": "icons/feather",
+      "name": "Feather",
+      "icon": "eye",
+      "slug": "icons-feather"
+    },
+    {
+      "name": "settings",
+      "icon": "settings",
+      "dropdown": "1",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "#",
+          "name": "system_config",
+          "icon": "edit",
+          "slug": "form-layout"
+        }
+      ]
+    }
+  ]
+}

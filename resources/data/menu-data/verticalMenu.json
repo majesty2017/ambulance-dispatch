@@ -1,0 +1,80 @@
+{
+  "menu": [
+    {
+      "name": "dashboard",
+      "badge": "",
+      "badgeClass": "badge badge-light-warning badge-pill ml-auto mr-1",
+      "icon": "home",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "dashboard/analytics",
+          "name": "Analytics",
+          "icon": "circle",
+          "slug": "dashboard-analytics"
+        }
+      ]
+    },
+
+    {
+      "navheader": "app_config",
+      "slug": ""
+    },
+    {
+      "url": "user/users/list",
+      "name": "users",
+      "icon": "users",
+      "slug": "user-list"
+    },
+    {
+      "url": "driver",
+      "name": "driver_info",
+      "icon": "user",
+      "slug": "driver-index"
+    },
+    {
+      "url": "requests",
+      "name": "ambulance_request",
+      "icon": "save",
+      "slug": "request-list"
+    },
+    {
+      "url": "ambulance",
+      "name": "ambulance",
+      "icon": "truck",
+      "slug": "ambulance-index"
+    },
+    {
+      "url": "routes",
+      "name": "routes",
+      "icon": "compass",
+      "slug": "route-index"
+    },
+    {
+      "url": "driver_status",
+      "name": "driver_status",
+      "icon": "alert-triangle",
+      "slug": "driver-status"
+    },
+    {
+      "url": "dispatch_status",
+      "name": "dispatch_status",
+      "icon": "filter",
+      "slug": "dispatch-status"
+    },
+    {
+      "name": "settings",
+      "icon": "settings",
+      "dropdown": "1",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "#",
+          "name": "system_config",
+          "icon": "edit",
+          "slug": "form-layout"
+        }
+      ]
+    }
+  ]
+}
