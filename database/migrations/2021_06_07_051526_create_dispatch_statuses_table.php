@@ -19,6 +19,7 @@ class CreateDispatchStatusesTable extends Migration
             $table->integer('admin_id');
             $table->integer('request_id');
             $table->string('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

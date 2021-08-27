@@ -16,6 +16,7 @@ class CreateRoutesTable extends Migration
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
             $table->string('hospital');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

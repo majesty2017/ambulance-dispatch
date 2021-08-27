@@ -25,6 +25,7 @@ class CreateDriverInfosTable extends Migration
             $table->string('phone');
             $table->string('qualification');
             $table->integer('route_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

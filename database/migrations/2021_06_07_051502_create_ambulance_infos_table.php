@@ -20,6 +20,7 @@ class CreateAmbulanceInfosTable extends Migration
             $table->string('engine_num');
             $table->integer('driver_id');
             $table->string('purchase_date');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

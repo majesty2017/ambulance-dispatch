@@ -20,6 +20,7 @@ class CreateERequestsTable extends Migration
             $table->string('request_method');
             $table->text('message');
             $table->string('location');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

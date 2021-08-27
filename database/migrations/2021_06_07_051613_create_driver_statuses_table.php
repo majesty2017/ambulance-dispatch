@@ -17,6 +17,7 @@ class CreateDriverStatusesTable extends Migration
             $table->id();
             $table->string('driver_id');
             $table->string('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
