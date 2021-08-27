@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DispatchStatus;
 use App\Models\DriverInfo;
 use App\Models\DriverStatus;
 use Illuminate\Database\Eloquent\Model;
@@ -34,6 +35,9 @@ class DriverStatusController extends Controller
         $status->driver_id = $request->driver_id;
         $status->status = $request->status;
         if ($status->save()) {
+            DispatchStatus::where('driver_id', $request->driver_id)->update([
+                'status' => $request->status,
+            ]);
             return response()->json(['data' => $status, 'message' => 'Record saved successfully.']);
         }
         return false;
@@ -70,6 +74,9 @@ class DriverStatusController extends Controller
         $status->driver_id = $request->driver_id;
         $status->status = $request->status;
         if ($status->update()) {
+            DispatchStatus::where('driver_id', $request->driver_id)->update([
+                'status' => $request->status,
+            ]);
             return response()->json(['data' => $status, 'message' => 'Changes saved successfully.']);
         }
         return false;

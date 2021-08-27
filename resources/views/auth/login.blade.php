@@ -40,7 +40,7 @@
           <h2 class="brand-text text-primary ml-1">Ambulance</h2>
         </a>
 
-        <h4 class="card-title mb-1">Welcome to Ambulance! 👋</h4>
+        <h4 class="card-title mb-1">Welcome to Ambulance Allocation Management System! 👋</h4>
         <p class="card-text mb-2">Please login to your account and start the adventure</p>
 
         <form class="auth-login-form mt-2" method="POST" action="{{ route('login') }}">

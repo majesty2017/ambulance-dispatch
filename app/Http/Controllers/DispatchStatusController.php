@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DispatchStatus;
 use App\Models\DriverInfo;
+use App\Models\DriverStatus;
 use App\Models\ERequest;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
@@ -40,21 +41,26 @@ class DispatchStatusController extends Controller
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);
         }
         $dispatch = new DispatchStatus;
+
         $dispatch->driver_id = $request->driver_id;
         $dispatch->admin_id = auth()->id();
         $dispatch->request_id = $request->request_id;
         $dispatch->status = $request->status;
+
 //        SMS Setup
         $driver = DriverInfo::where('id', $request->driver_id)->first();
         $erequest = ERequest::where('id', $request->request_id)->first();
         $driver_phone = $driver->phone;
         $driver_name = $driver->first_name.' '.$driver->other_name.' '.$driver->last_name;
-        $admin_message = 'Driver '.$driver_name.' dispatched';
+        $admin_message = 'Driver '.$driver_name.' dispatched to '.$erequest->location;
         $driver_message = 'Dear '.$driver_name.', you are being dispached to '.$erequest->location;
-        SmsConfigController::send_sms(auth()->user()->phone, $admin_message);
-        SmsConfigController::send_sms($driver_phone, $driver_message);
 
         if ($dispatch->save()) {
+            DriverStatus::where('driver_id', $request->driver_id)->update([
+                'status' => $request->status,
+            ]);
+            SmsConfigController::send_sms(auth()->user()->phone, $admin_message);
+            SmsConfigController::send_sms($driver_phone, $driver_message);
             return response()->json(['data' => $dispatch, 'message' => 'Record saved successfully.']);
         }
         return false;
@@ -88,6 +94,9 @@ class DispatchStatusController extends Controller
         $dispatch->request_id = $request->request_id;
         $dispatch->status = $request->status;
         if ($dispatch->update()) {
+            DriverStatus::where('driver_id', $request->driver_id)->update([
+                'status' => $request->status,
+            ]);
             return response()->json(['data' => $dispatch, 'message' => 'Changes saved successfully.']);
         }
         return false;
